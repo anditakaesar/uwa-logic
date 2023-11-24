@@ -27,6 +27,6 @@ func main() {
 			log.Fatal(err)
 		}
 		log.Printf("[main] request num: %d, resp: %s", i, responseBody.Result)
-		time.Sleep(1 * time.Second)
+		time.Sleep(100 * time.Microsecond)
 	}
 }
