@@ -22,14 +22,14 @@ const (
 
 func Run() {
 	fmt.Println("[main] initialize db")
-	db, err := buntdb.Open(":memory:")
+	db, err := setupDB()
 	if err != nil {
 		log.Fatalf("[main] buntdb.Open err %s", err.Error())
 	}
 	defer db.Close()
 
 	fmt.Println("[main] initialize main key")
-	err = SetupDB(db)
+	err = InitializeData(db)
 	if err != nil {
 		log.Fatalf("[main] SetupDB err %s", err.Error())
 	}
@@ -37,7 +37,15 @@ func Run() {
 	log.Fatal(srv(db))
 }
 
-func SetupDB(db *buntdb.DB) error {
+func setupDB() (*buntdb.DB, error) {
+	db, err := buntdb.Open(":memory:")
+	if err != nil {
+		return nil, err
+	}
+	return db, nil
+}
+
+func InitializeData(db *buntdb.DB) error {
 	names := constants.GetNames(LenNames)
 	err := db.Update(func(tx *buntdb.Tx) error {
 		for i, name := range names {

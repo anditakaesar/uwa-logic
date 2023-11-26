@@ -1,9 +1,14 @@
 package main
 
 import (
-	"github.com/anditakaesar/uwa-logic/pkg/getnames"
+	"github.com/anditakaesar/uwa-logic/pkg"
 )
 
 func main() {
-	getnames.Run()
+	pkgObj := &pkg.Pkg{}
+	//pkgObj.RunRichest()
+
+	pkgObj.RunStepsToZero()
+	// server
+	//pkgObj.RunGetNames()
 }
