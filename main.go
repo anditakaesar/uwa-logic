@@ -6,9 +6,11 @@ import (
 
 func main() {
 	pkgObj := &pkg.Pkg{}
-	//pkgObj.RunRichest()
 
-	pkgObj.RunStepsToZero()
+	//pkgObj.RunRichest()
+	//pkgObj.RunStepsToZero()
+	pkgObj.RunMidLinkedList()
+
 	// server
 	//pkgObj.RunGetNames()
 }
