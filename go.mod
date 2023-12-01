@@ -2,7 +2,10 @@ module github.com/anditakaesar/uwa-logic
 
 go 1.21
 
-require github.com/tidwall/buntdb v1.3.0
+require (
+	github.com/google/uuid v1.4.0
+	github.com/tidwall/buntdb v1.3.0
+)
 
 require (
 	github.com/tidwall/btree v1.6.0 // indirect

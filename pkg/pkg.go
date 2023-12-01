@@ -3,6 +3,7 @@ package pkg
 import (
 	"github.com/anditakaesar/uwa-logic/pkg/getnames"
 	"github.com/anditakaesar/uwa-logic/pkg/midlinkedlist"
+	"github.com/anditakaesar/uwa-logic/pkg/ransomenote"
 	"github.com/anditakaesar/uwa-logic/pkg/richest"
 	"github.com/anditakaesar/uwa-logic/pkg/stepstozero"
 )
@@ -30,4 +31,8 @@ func (p *Pkg) RunStepsToZero() {
 
 func (p *Pkg) RunMidLinkedList() {
 	midlinkedlist.Run()
+}
+
+func (p *Pkg) RunRansomNote() {
+	ransomenote.Run()
 }
